@@ -1,0 +1,4 @@
+[20231:20231:1009/005453.115246:ERROR:ui/gl/angle_platform_impl.cc:34] vulkan_icd.cpp:157 (ScopedVkLoaderEnvironment): Error setting CWD for Vulkan layers init.
+ERR: vulkan_icd.cpp:157 (ScopedVkLoaderEnvironment): Error setting CWD for Vulkan layers init.
+<html><head></head><body></body></html>
+exit=0
