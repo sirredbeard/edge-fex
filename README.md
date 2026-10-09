@@ -1,5 +1,7 @@
 # edge-fex
 
+<img width="1857" height="873" alt="HUKFq8EWEAAj2Iw" src="https://github.com/user-attachments/assets/1065a105-ea95-448f-95c2-33c521dffe2f" />
+
 Run the amd64 build of [Microsoft Edge](https://www.microsoft.com/edge) under
 [FEX-Emu](https://github.com/FEX-Emu/FEX) on an arm64
 [Arduino VENTUNO Q](https://docs.arduino.cc/hardware/ventuno-q/), then attach
@@ -53,10 +55,6 @@ title are redacted:
 This is the same browser at rest:
 
 ![Edge renderer processes at rest under FEX](screenshots/edge-rest-redacted.png)
-
-There is one screenshot already checked into the repository:
-
-![Headed Edge and the GNOME crash dialog](findings/crashes/headed-edge-and-gnome-shell-crash-dialog.png)
 
 ## My setup
 
