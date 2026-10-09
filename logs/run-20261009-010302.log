@@ -100,3 +100,9 @@ DevTools listening on ws://127.0.0.1:9333/devtools/browser/6391359e-1928-4180-98
 [71699:71699:1009/010324.662300:INFO:CONSOLE:6150] "[ProtocolLaunch] handler constructed; wiring port events.", source: chrome-extension://ndcpkimcihhghdcddljkfmmjccdmcmof/background.rollup.js (6150)
 [71699:71699:1009/010335.242380:WARNING:chrome/browser/edge_underside/underside_helper.cc:1109] If test does not need FrontLoad, this may be expected. SetFrontLoadDecision: 3
 [71699:71866:1009/010337.203778:INFO:chrome/browser/extensions/extension_garbage_collector.cc:212] Garbage collection for extensions on file thread is complete.
+[71699:71699:1009/010552.150869:ERROR:content/common/zygote/zygote_communication_linux.cc:313] Failed to send GetTerminationStatus message to zygote
+[71699:71699:1009/010552.151187:WARNING:content/common/zygote/zygote_communication_linux.cc:325] Socket closed prematurely.
+[71699:71699:1009/010552.180909:ERROR:content/common/zygote/zygote_communication_linux.cc:313] Failed to send GetTerminationStatus message to zygote
+[71699:71699:1009/010552.181120:WARNING:content/common/zygote/zygote_communication_linux.cc:325] Socket closed prematurely.
+[71699:71699:1009/010552.226457:ERROR:content/common/zygote/zygote_communication_linux.cc:313] Failed to send GetTerminationStatus message to zygote
+[71699:71699:1009/010552.226532:WARNING:content/common/zygote/zygote_communication_linux.cc:325] Socket closed prematurely.

@@ -16,7 +16,9 @@ This is a data dump for now. It will turn into a guide once it works reliably.
 
 - Edge's child processes (network service, GPU, zygote) die with `/proc/self/exe: 1: Syntax error: ")" unexpected`. Chromium re-executes `/proc/self/exe`, FEX hands that to `/bin/sh` as if it was a script, and dash chokes on the ELF header. Passing `--browser-subprocess-path=/opt/microsoft/msedge/msedge` works around it. See `findings/`.
 - `--single-process` just trades it for a crashpad ptrace failure and a core dump.
-- The board has hard-reset three times during testing, with no trace in the journal. `scripts/monitor.sh` logs health once a second with fsync so the last lines survive. I suspect memory or thermals, however I don't have evidence yet.
+- The board resets weren't FEX. apport caught a `gnome-shell` SIGABRT from a GLib assertion in `meta_window_unmaximize()` (mutter 46.2-1ubuntu0.24.04.16), a minute before each reboot. I suspect Edge's maximize/unmaximize request on X11 triggers it, however I haven't proven that. See `findings/2026-10-09-gnome-shell-crash.md`.
+- Headed Edge with `--disable-gpu` on X11 works through `scripts/run-edge.sh`. Pages render. CJK text shows as boxes until `fonts-noto-cjk` goes in the rootfs.
+- One Edge process hit a FEX SIGSEGV. No stack yet.
 
 ## Scripts
 
