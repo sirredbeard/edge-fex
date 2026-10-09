@@ -214,6 +214,44 @@ provisioning commands were not captured here, so verify the package and binary
 state with the commands in `Observed setup` rather than guessing that a newer
 rootfs is equivalent.
 
+## Make Edge the default browser
+
+The VENTUNO Q already has a desktop entry for the FEX launcher:
+
+```text
+$HOME/.local/share/applications/microsoft-edge-fex.desktop
+```
+
+The desktop entry calls `/usr/local/bin/microsoft-edge-stable`, which runs the
+amd64 Edge binary through FEX and adds the Wayland, child-process, sandbox, and
+memory-limit arguments from `scripts/microsoft-edge-wrapper.sh`.
+
+Set it as the default browser for the current desktop user:
+
+```bash
+$ xdg-settings set default-web-browser microsoft-edge-fex.desktop
+$ xdg-mime default microsoft-edge-fex.desktop x-scheme-handler/http
+$ xdg-mime default microsoft-edge-fex.desktop x-scheme-handler/https
+$ xdg-mime default microsoft-edge-fex.desktop text/html
+```
+
+Check the result:
+
+```bash
+$ xdg-settings get default-web-browser
+microsoft-edge-fex.desktop
+$ xdg-mime query default x-scheme-handler/http
+microsoft-edge-fex.desktop
+$ xdg-mime query default x-scheme-handler/https
+microsoft-edge-fex.desktop
+$ xdg-mime query default text/html
+microsoft-edge-fex.desktop
+```
+
+This changes future links and HTML files. It does not restart or replace an
+Edge process that is already running, and it does not change the default
+browser for another Linux user.
+
 The scripts are the important part of the setup:
 
 - [`scripts/run-edge.sh`](scripts/run-edge.sh) starts Edge in a memory-capped
