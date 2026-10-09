@@ -1,0 +1,11 @@
+# started 2026-10-09T00:54:19+00:00 boot=d751d3ff-5d65-4f2c-ba96-834b1c8a09d9 uptime=1300.72
+00:54:19 load=1.46 1.87 1.63 avail_mb=13804 swapfree_mb=0 dirty_kb=64 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:443M MainThread:128M MainThread:103M ]
+00:54:21 load=1.46 1.87 1.63 avail_mb=13804 swapfree_mb=0 dirty_kb=96 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:445M MainThread:128M MainThread:103M ]
+00:54:23 load=1.46 1.87 1.63 avail_mb=13807 swapfree_mb=0 dirty_kb=152 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:445M MainThread:128M MainThread:103M ]
+00:54:24 load=1.42 1.85 1.63 avail_mb=13805 swapfree_mb=0 dirty_kb=248 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:446M MainThread:128M MainThread:103M ]
+00:54:26 load=1.42 1.85 1.63 avail_mb=13805 swapfree_mb=0 dirty_kb=248 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:451M MainThread:128M MainThread:103M ]
+00:54:28 load=1.42 1.85 1.63 avail_mb=13798 swapfree_mb=0 dirty_kb=248 memPSI=[avg10=0.00 ] maxtemp=39C(cpu-0-2-1-thermal) fex_procs=0 top=[MainThread:449M MainThread:128M MainThread:103M ]
+00:54:29 load=1.47 1.85 1.63 avail_mb=13798 swapfree_mb=0 dirty_kb=64 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:450M MainThread:128M MainThread:103M ]
+00:54:31 load=1.47 1.85 1.63 avail_mb=13800 swapfree_mb=0 dirty_kb=64 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:446M MainThread:128M MainThread:103M ]
+00:54:33 load=1.47 1.85 1.63 avail_mb=13802 swapfree_mb=0 dirty_kb=64 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:446M MainThread:128M MainThread:103M ]
+00:54:34 load=1.51 1.86 1.63 avail_mb=13802 swapfree_mb=0 dirty_kb=68 memPSI=[avg10=0.00 ] maxtemp=39C(pmm8650au_1_sdram) fex_procs=0 top=[MainThread:449M MainThread:128M MainThread:104M ]

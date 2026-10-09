@@ -1,0 +1,52 @@
+== boot -1 last lines
+Oct 07 04:20:18.288645 ventunoq systemd[1]: systemd-tmpfiles-setup-dev.service: Deactivated successfully.
+Oct 07 04:20:18.289015 ventunoq systemd[1]: Stopped systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+Oct 07 04:20:18.299577 ventunoq systemd[1]: systemd-tmpfiles-setup-dev-early.service: Deactivated successfully.
+Oct 07 04:20:18.300092 ventunoq systemd[1]: Stopped systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+Oct 07 04:20:18.313319 ventunoq systemd[1]: multipathd.service: Deactivated successfully.
+Oct 07 04:20:18.314397 ventunoq systemd[1]: Stopped multipathd.service - Device-Mapper Multipath Device Controller.
+Oct 07 04:20:18.324635 ventunoq systemd[1]: multipathd.service: Consumed 20.743s CPU time, 22.3M memory peak, 0B memory swap peak.
+Oct 07 04:20:18.328941 ventunoq systemd[1]: systemd-remount-fs.service: Deactivated successfully.
+Oct 07 04:20:18.329690 ventunoq systemd[1]: Stopped systemd-remount-fs.service - Remount Root and Kernel File Systems.
+Oct 07 04:20:18.389887 ventunoq systemd[1]: lvm2-monitor.service: Deactivated successfully.
+Oct 07 04:20:18.391233 ventunoq systemd[1]: Stopped lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+Oct 07 04:20:18.405720 ventunoq systemd[1]: Reached target shutdown.target - System Shutdown.
+Oct 07 04:20:18.416709 ventunoq systemd[1]: Reached target final.target - Late Shutdown Services.
+Oct 07 04:20:18.428170 ventunoq systemd[1]: systemd-reboot.service: Deactivated successfully.
+Oct 07 04:20:18.428477 ventunoq systemd[1]: Finished systemd-reboot.service - System Reboot.
+Oct 07 04:20:18.436944 ventunoq systemd[1]: Reached target reboot.target - System Reboot.
+Oct 07 04:20:18.447489 ventunoq systemd[1]: Shutting down.
+Oct 07 04:20:18.552675 ventunoq systemd[1]: Using hardware watchdog 'qcom_wdt', version 0, device /dev/watchdog0
+Oct 07 04:20:18.552700 ventunoq systemd[1]: Watchdog running with a timeout of 10min.
+Oct 07 04:20:18.560233 ventunoq kernel: watchdog: watchdog0: watchdog did not stop!
+Oct 07 04:20:18.566426 ventunoq systemd-shutdown[1]: Using hardware watchdog 'qcom_wdt', version 0, device /dev/watchdog0
+Oct 07 04:20:18.625229 ventunoq systemd-shutdown[1]: Watchdog running with a timeout of 10min.
+Oct 07 04:20:18.625438 ventunoq systemd-shutdown[1]: Syncing filesystems and block devices.
+Oct 07 04:20:18.636112 ventunoq systemd-shutdown[1]: Sending SIGTERM to remaining processes...
+Oct 07 04:20:18.636697 ventunoq systemd-journald[599]: Journal stopped
+== boot -2 last lines
+Oct 03 22:17:14.018846 ventunoq systemd[1]: systemd-tmpfiles-setup-dev.service: Deactivated successfully.
+Oct 03 22:17:14.019266 ventunoq systemd[1]: Stopped systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+Oct 03 22:17:14.030088 ventunoq systemd[1]: systemd-tmpfiles-setup-dev-early.service: Deactivated successfully.
+Oct 03 22:17:14.030462 ventunoq systemd[1]: Stopped systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+Oct 03 22:17:14.043280 ventunoq systemd[1]: multipathd.service: Deactivated successfully.
+Oct 03 22:17:14.044396 ventunoq systemd[1]: Stopped multipathd.service - Device-Mapper Multipath Device Controller.
+Oct 03 22:17:14.058111 ventunoq systemd[1]: systemd-remount-fs.service: Deactivated successfully.
+Oct 03 22:17:14.058686 ventunoq systemd[1]: Stopped systemd-remount-fs.service - Remount Root and Kernel File Systems.
+Oct 03 22:17:14.135758 ventunoq systemd[1]: lvm2-monitor.service: Deactivated successfully.
+Oct 03 22:17:14.137021 ventunoq systemd[1]: Stopped lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+Oct 03 22:17:14.149958 ventunoq systemd[1]: Reached target shutdown.target - System Shutdown.
+Oct 03 22:17:14.160394 ventunoq systemd[1]: Reached target final.target - Late Shutdown Services.
+Oct 03 22:17:14.171718 ventunoq systemd[1]: systemd-reboot.service: Deactivated successfully.
+Oct 03 22:17:14.171905 ventunoq systemd[1]: Finished systemd-reboot.service - System Reboot.
+Oct 03 22:17:14.182570 ventunoq systemd[1]: Reached target reboot.target - System Reboot.
+Oct 03 22:17:14.193259 ventunoq systemd[1]: Shutting down.
+Oct 03 22:17:14.315513 ventunoq systemd[1]: Using hardware watchdog 'qcom_wdt', version 0, device /dev/watchdog0
+Oct 03 22:17:14.315538 ventunoq systemd[1]: Watchdog running with a timeout of 10min.
+Oct 03 22:17:14.323090 ventunoq kernel: watchdog: watchdog0: watchdog did not stop!
+Oct 03 22:17:14.329277 ventunoq systemd-shutdown[1]: Using hardware watchdog 'qcom_wdt', version 0, device /dev/watchdog0
+Oct 03 22:17:14.427843 ventunoq systemd-shutdown[1]: Watchdog running with a timeout of 10min.
+Oct 03 22:17:14.428148 ventunoq systemd-shutdown[1]: Syncing filesystems and block devices.
+Oct 03 22:17:14.438646 ventunoq systemd-shutdown[1]: Sending SIGTERM to remaining processes...
+Oct 03 22:17:14.438974 ventunoq systemd-journald[599]: Received SIGTERM from PID 1 (systemd-shutdow).
+Oct 03 22:17:14.439563 ventunoq systemd-journald[599]: Journal stopped
