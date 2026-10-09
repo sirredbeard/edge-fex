@@ -2,7 +2,7 @@ Gtk-Message: 01:03:04.091: Failed to load module "canberra-gtk-module"
 Gtk-Message: 01:03:04.113: Failed to load module "canberra-gtk-module"
 [72167:72167:1009/010305.406523:WARNING:sandbox/policy/linux/sandbox_linux.cc:405] InitializeSandbox() called with multiple threads in process gpu-process.
 
-DevTools listening on ws://127.0.0.1:9333/devtools/browser/6391359e-1928-4180-98d9-732abaa167a9
+DevTools listening on ws://<redacted>
 [71699:73234:1009/010312.155361:INFO:components/edge_auth/oneauth/oneauth_config.cc:204] EventName: TransactionMicrosoftEdgeLinux
 [71699:73234:1009/010312.156363:INFO:components/edge_auth/oneauth/oneauth_config.cc:205] SessionId: 0069c801-64a8-47b9-a6e4-52c49eadb819
 [71699:73234:1009/010312.156391:INFO:components/edge_auth/oneauth/oneauth_config.cc:206] RecommendedTelemetryRegion: GLOBAL
@@ -59,7 +59,7 @@ DevTools listening on ws://127.0.0.1:9333/devtools/browser/6391359e-1928-4180-98
 [71699:73234:1009/010312.158846:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: oneauth_ExecutionFlow, value: {"de":0,"ef":[{"t":"9zkae","tid":1,"ts":0,"l":2},{"t":"4p5fv","tid":1,"ts":25,"l":2},{"t":"646u1","tid":1,"ts":82,"l":2},{"t":"4f3j6","tid":1,"ts":82,"l":2},{"t":"4s7uc","tid":1,"ts":108,"l":2},{"t":"4sufd","tid":1,"ts":108,"s":2,"l":2},{"t":"4swgg","tid":1,"ts":109,"s":2,"l":2},{"t":"4swgf","tid":1,"ts":109,"s":1,"l":2},{"t":"4swgi","tid":6,"ts":109,"s":2,"l":2},{"t":"8b2yn","tid":6,"ts":111,"l":2},{"t":"8dqkx","tid":6,"ts":122,"l":2},{"t":"8dqil","tid":6,"ts":128,"l":2},{"t":"8b2hs","tid":6,"ts":128,"l":2},{"t":"8dqk2","tid":6,"ts":129,"l":2},{"t":"646u1","tid":6,"ts":140,"l":2},{"t":"4c10b","tid":6,"ts":140,"l":2},{"t":"4c10a","tid":6,"ts":140,"l":2},{"t":"6b224","tid":6,"ts":148,"l":2},{"t":"49ayy","tid":6,"ts":152,"l":2},{"t":"52trf","tid":6,"ts":153,"e":1200,"l":4},{"t":"9zkad","tid":6,"ts":160,"l":2}],"t":[{"a":0,"t":172}]}
 [71699:73234:1009/010312.158863:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_start_time, value: 2026-10-09T01:03:12.000Z
 [71699:73234:1009/010312.158874:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_api_error_context, value: Default account could not be found
-[71699:73234:1009/010312.158886:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_original_authority, value: https://login.microsoftonline.com/common
+[71699:73234:1009/010312.158886:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_original_authority, value: <redacted-auth-endpoint>
 [71699:73234:1009/010312.158898:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_additional_query_parameters_count, value: 0
 [71699:73234:1009/010312.158908:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_authority_type, value: Unknown
 [71699:73234:1009/010312.158920:INFO:components/edge_auth/oneauth/oneauth_config.cc:218] String type data key: MSAL_api_error_tag, value: 52trf
