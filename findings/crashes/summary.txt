@@ -1,0 +1,36 @@
+=== _usr_bin_gnome-shell.1000
+ProblemType: Crash
+Date: Fri Oct  9 00:30:54 2026
+ExecutablePath: /usr/bin/gnome-shell
+Package: gnome-shell 46.0-0ubuntu6~24.04.15
+PackageArchitecture: arm64
+ProcCmdline: /usr/bin/gnome-shell
+Signal: 6
+SignalName: SIGABRT
+SourcePackage: gnome-shell
+StacktraceTop:
+StacktraceTop:
+ __pthread_kill_implementation (threadid=281473439789088, signo=signo@entry=6, no_tid=no_tid@entry=0) at ./nptl/pthread_kill.c:44
+ __pthread_kill_internal (signo=6, threadid=<optimized out>) at ./nptl/pthread_kill.c:78
+ __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+ __GI_abort () at ./stdlib/abort.c:79
+ g_assertion_message () from /lib/aarch64-linux-gnu/libglib-2.0.so.0
+Tags: arm64-image noble third-party-packages
+ThreadStacktrace:
+ .
+ Thread 19 (Thread 0xffff76abe280 (LWP 9710)):
+ #0  0x0000ffffa3f81d6c in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0xaaaae4c17d98) at ./nptl/futex-internal.c:57
+         _x3tmp = 0
+         _x0tmp = 187650959048088
+         _x0 = 187650959048088
+         _x3 = 0
+=== _usr_bin_FEX.1000
+ProblemType: Crash
+Date: Fri Oct  9 01:01:43 2026
+ExecutablePath: /usr/bin/FEX
+Package: fex-emu-armv8.2 2610-1~n [origin: LP-PPA-fex-emu-fex]
+PackageArchitecture: arm64
+ProcCmdline: /opt/microsoft/msedge/msedge\ --browser-subprocess-path=/opt/microsoft/msedge/msedge\ --no-sandbox\ --disable-dev-shm-usage\ --disable-gpu\ --no-first-run\ --user-data-dir=/tmp/e4\ --remote-debugging-port=9333\ --enable-logging=stderr\ --v=0\ about:blank
+Signal: 11
+SignalName: SIGSEGV
+SourcePackage: fex-emu-armv8.2

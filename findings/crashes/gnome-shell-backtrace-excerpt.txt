@@ -1,0 +1,36 @@
+ #4  <signal handler called>
+ No symbol table info available.
+ #5  __pthread_kill_implementation (threadid=281473439789088, signo=signo@entry=6, no_tid=no_tid@entry=0) at ./nptl/pthread_kill.c:44
+         tid = 9658
+         ret = 0
+         pd = 0xffffa4647020
+         old_mask = {__val = {281473433954032}}
+         ret = <optimized out>
+ #6  0x0000ffffa3f87540 in __pthread_kill_internal (signo=6, threadid=<optimized out>) at ./nptl/pthread_kill.c:78
+ No locals.
+ #7  0x0000ffffa3f3cb3c in __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+         ret = <optimized out>
+ #8  0x0000ffffa3f27e00 in __GI_abort () at ./stdlib/abort.c:79
+         save_stage = 1
+         act = {__sigaction_handler = {sa_handler = 0x20, sa_sigaction = 0x20}, sa_mask = {__val = {281473435750152, 7881137038457137007, 281473441333248, 18446463698227691520, 18446744073709551360, 1
+ #9  0x0000ffffa46dc0d4 in g_assertion_message () from /lib/aarch64-linux-gnu/libglib-2.0.so.0
+ No symbol table info available.
+ #10 0x0000ffffa46dc138 in g_assertion_message_expr () from /lib/aarch64-linux-gnu/libglib-2.0.so.0
+ No symbol table info available.
+ #11 0x0000ffffa41a6ed4 in ?? () from /lib/aarch64-linux-gnu/libmutter-14.so.0
+ No symbol table info available.
+ #12 0x0000ffffa41ad628 in meta_window_unmaximize () from /lib/aarch64-linux-gnu/libmutter-14.so.0
+ No symbol table info available.
+ #13 0x0000ffffa41cc2c8 in ?? () from /lib/aarch64-linux-gnu/libmutter-14.so.0
+ No symbol table info available.
+ #14 0x0000ffffa41ce5a4 in ?? () from /lib/aarch64-linux-gnu/libmutter-14.so.0
+ No symbol table info available.
+ #15 0x0000ffffa41d17f8 in ?? () from /lib/aarch64-linux-gnu/libmutter-14.so.0
+ No symbol table info available.
+ #16 0x0000ffffa46af7f0 in ?? () from /lib/aarch64-linux-gnu/libglib-2.0.so.0
+ No symbol table info available.
+ #17 0x0000ffffa4711c38 in ?? () from /lib/aarch64-linux-gnu/libglib-2.0.so.0
+ No symbol table info available.
+ #18 0x0000ffffa46b02b0 in g_main_loop_run () from /lib/aarch64-linux-gnu/libglib-2.0.so.0
+ No symbol table info available.
+ #19 0x0000ffffa418fd20 in meta_context_run_main_loop () from /lib/aarch64-linux-gnu/libmutter-14.so.0
