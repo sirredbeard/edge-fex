@@ -1,0 +1,8 @@
+[69621:69621:1008/222505.136714:ERROR:media/gpu/vaapi/vaapi_wrapper.cc:1801] vaInitialize failed: unknown libva error
+
+DevTools listening on ws://<redacted>
+[90355:90355:1008/222804.423975:ERROR:services/on_device_model/ml/edge_onnxruntime_genai/oga_utils.cc:110] Edge LLM: Error getting component directory
+[90355:90355:1008/222804.426964:ERROR:services/on_device_model/edge_presandbox_init.cc:19] Edge LLM Pre sandbox error: Error getting component directory
+[69083:69083:1008/224642.743226:ERROR:content/common/zygote/zygote_communication_linux.cc:313] Failed to send GetTerminationStatus message to zygote
+[69083:69083:1008/224642.815369:ERROR:content/common/zygote/zygote_communication_linux.cc:313] Failed to send GetTerminationStatus message to zygote
+[69083:69083:1008/224642.904870:ERROR:content/common/zygote/zygote_communication_linux.cc:313] Failed to send GetTerminationStatus message to zygote

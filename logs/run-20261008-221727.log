@@ -1,0 +1,17 @@
+[6384:6384:1008/221733.281295:ERROR:media/gpu/vaapi/vaapi_wrapper.cc:1801] vaInitialize failed: unknown libva error
+
+DevTools listening on ws://<redacted>
+[32553:32553:1008/222033.502199:ERROR:services/on_device_model/ml/edge_onnxruntime_genai/oga_utils.cc:110] Edge LLM: Error getting component directory
+[32553:32553:1008/222033.505925:ERROR:services/on_device_model/edge_presandbox_init.cc:19] Edge LLM Pre sandbox error: Error getting component directory
+[5809:5809:1008/222250.524835:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222250.593454:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222250.784431:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222251.781902:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222252.223179:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222252.392439:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222252.601309:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222252.791328:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222253.080663:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222253.269639:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+[5809:5809:1008/222253.356919:ERROR:chrome/browser/ui/views/autofill/autofill_popup_view_edge_views.cc:932] HasFocusnot implemented.
+exit=0

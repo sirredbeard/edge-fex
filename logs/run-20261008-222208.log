@@ -1,0 +1,4 @@
+[48729:48729:1008/222215.874033:ERROR:media/gpu/vaapi/vaapi_wrapper.cc:1801] vaInitialize failed: unknown libva error
+
+DevTools listening on ws://<redacted>
+exit=0
