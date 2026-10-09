@@ -308,8 +308,9 @@ The profile on this board has completed that headed sign-in step.
 
 Raw Chromium logs can contain debugging endpoints, authentication service
 URLs, page URLs, and profile paths. Review every log before committing it. The
-checked-in run logs redact the DevTools address and authentication endpoint,
-and the checked-in screenshots redact the local account name. The public
+checked-in run logs redact the DevTools address and remove verbose
+authentication diagnostics, and the checked-in screenshots redact the local
+account name. The public
 `example.com` smoke test remains in the logs because it is the documented test
 case, not private browsing history.
 
@@ -511,9 +512,9 @@ edge-fex/
 ```
 
 The logs are evidence, not a substitute for reproducing the behavior. The
-checked-in logs redact DevTools addresses and authentication endpoints. They do
-not contain account names, private site names, private page URLs, local account
-names, or browser profile contents.
+checked-in logs redact DevTools addresses and remove verbose authentication
+diagnostics. They do not contain account names, private site names, private
+page URLs, local account names, or browser profile contents.
 
 ## Additional Reading
 
