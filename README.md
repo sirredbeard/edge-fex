@@ -7,27 +7,14 @@ Run the amd64 build of [Microsoft Edge](https://www.microsoft.com/edge) under
 browsing.
 
 It is slow. It is also useful. The point of this project is to get Edge
-running on the board with a persistent, authenticated browser profile, not to
-pretend that translated x86_64 Chromium is a fast way to browse the web.
+running on the board with a persistent, authenticated browser profile.
 
 I created a dedicated profile on this board, signed into my Microsoft account,
-and signed into a handful of sites I want an agent to use. The profile stays on
-the board. It is not in this repository.
-
-The notes here are from the VENTUNO Q on October 8-9, 2026. The exact Edge and
-FEX versions matter.
+and signed into a handful of sites I want an agent to use.
 
 ## Why
 
-The VENTUNO Q is an arm64 board, while the useful existing browser automation
-profile is based on the amd64 Linux build of Edge. FEX makes it possible to
-run that build without replacing the board's userspace or asking Playwright
-to drive a different browser.
-
-This is a practical compromise. Translation adds latency and CPU use, Edge
-needs `--no-sandbox` under the current FEX setup, and one run produced a FEX
-SIGSEGV. I still want the browser running because a slow authenticated browser
-is more useful here than a browser that cannot run at all.
+I need my agents to browse the web for me from an authenticated browser profile and my home IP address. All my passwords are stored in Edge sync. I needed Edge to run in GUI mode so I could log into my Microsoft account, sync my passwords, and then log into a handful of sites that block the IP ranges my cloud agent was coming from. This way, my agent can browse the web on my behalf, from an authenicated profile, on my home IP address.
 
 ## What works
 
@@ -51,8 +38,7 @@ without a new `gnome-shell` crash report.
 
 GPU acceleration works through FEX's EGL/OpenGL thunk. Chromium reported ANGLE
 over EGL/OpenGL on the Adreno 623, with GPU compositing, rasterization, Canvas,
-WebGL, and WebGPU enabled. Do not add `--disable-gpu` to the working Wayland
-launcher.
+WebGL, and WebGPU enabled.
 
 The browser is still very very slow compared with native arm64 software. In a
 15-second sample on a normal image-heavy page, the accelerated instance used
@@ -72,41 +58,16 @@ There is one screenshot already checked into the repository:
 
 ![Headed Edge and the GNOME crash dialog](findings/crashes/headed-edge-and-gnome-shell-crash-dialog.png)
 
-The redacted copies above came from `$HOME/Pictures/Screenshots/` on the board.
-The original captures stay local because screenshots of an authenticated
-browser can contain account names, page contents, private URLs, or other
-browser state.
+## My setup
 
-## Observed setup
+My setup that produced these results was:
 
-The setup that produced these results was:
-
-- Arduino VENTUNO Q, identified by `arduino,monza`
+- Arduino VENTUNO Q
 - arm64 host kernel `6.8.0-1089-qcom`
 - Ubuntu 24.04 rootfs named `Ubuntu_24_04_edge`
 - `fex-emu-armv8.2` version `2610-1`
 - FEX binfmt handlers registered for x86 and x86_64
 - `microsoft-edge-stable` version `155.0.4283.45-1`, amd64
-- .NET `11.0.100-rc.1` installed on the host at `/usr/share/dotnet`
-- a 7.5 GB `/dev/shm` tmpfs
-
-Check the local versions before debugging a new board or rootfs:
-
-```bash
-$ uname -m
-$ dpkg-query -W -f='${Package} ${Version} ${Architecture}\n' fex-emu-armv8.2
-$ ROOTFS=$(sed -n 's/.*"RootFS": "\([^"]*\)".*/\1/p' "$HOME/.fex-emu/Config.json")
-$ file "$ROOTFS/opt/microsoft/msedge/msedge"
-$ awk 'BEGIN{RS=""} /Package: microsoft-edge-stable/' "$ROOTFS/var/lib/dpkg/status" \
-    | grep -E '^(Package|Version|Architecture):'
-$ echo "$XDG_SESSION_TYPE"
-$ echo "$WAYLAND_DISPLAY"
-$ df -h /dev/shm
-```
-
-The host should report `aarch64`, while the Edge binary should report `x86-64`
-and the package should report `amd64`. Edge is installed inside the FEX rootfs,
-not the host filesystem.
 
 ## How this works
 
@@ -170,7 +131,7 @@ during sandbox setup. `--test-type` hides the persistent warning banner caused
 by `--no-sandbox`.
 
 This is a local experimental setup. Do not treat it as a secure general
-purpose browser or expose its debugging socket to a network.
+purpose browser.
 
 ### Wayland instead of X11
 
@@ -184,11 +145,6 @@ wayland
 The launcher adds `--ozone-platform=wayland` when `WAYLAND_DISPLAY` is set.
 The Wayland path avoids the X11 launch path associated with the observed
 `gnome-shell` SIGABRT in `meta_window_unmaximize()`.
-
-That does not prove Edge caused the compositor crash. The X11 session produced
-the crash report, while the Wayland session survived the same basic window
-operations. I suspect the X11 maximize/unmaximize path, however I have not
-proved it.
 
 ## Steps to replicate
 
@@ -208,11 +164,6 @@ These are the steps used on the VENTUNO Q.
 9. Create the dedicated profile described below.
 10. Close headed Edge, start the same profile with `--headless=new` and CDP
    enabled, and attach Playwright.
-
-The repository starts after FEX, the rootfs, and Edge are installed. The exact
-provisioning commands were not captured here, so verify the package and binary
-state with the commands in `Observed setup` rather than guessing that a newer
-rootfs is equivalent.
 
 ## Make Edge the default browser
 
@@ -261,8 +212,6 @@ The scripts are the important part of the setup:
 - [`scripts/monitor.sh`](scripts/monitor.sh) records board health once a
   second, including memory PSI and temperature.
 
-Do not replace these with a plain `FEX msedge` command until the child-process
-workaround and the memory limits are understood.
 
 ## Run Edge
 
@@ -315,9 +264,7 @@ is not a substitute. It led to a crashpad ptrace failure and exit code 139.
 
 ## Create the authenticated profile
 
-Use a dedicated Edge profile. Do not use the normal daily profile, and do not
-put the profile in this repository. The profile contains cookies, local
-storage, tokens, history, and other browser state.
+The Edge profile contains cookies, local storage, tokens, history, and other browser state, useful for avoiding Bot blocks.
 
 Choose a local path outside the checkout:
 
@@ -337,20 +284,10 @@ $ ./scripts/run-edge.sh \
 
 Sign into the Microsoft account in the Edge window, then sign into the small
 set of sites that the agent is approved to use. Complete any multi-factor
-authentication prompts in the headed browser. Do not copy passwords, recovery
-codes, cookies, account names, site names, or CDP URLs into this repository.
+authentication prompts in the headed browser.
 
 The profile is the authenticated state. Close Edge cleanly after the sign-in
 session finishes, then use the same `EDGE_PROFILE` for the headless launch.
-The profile on this board has completed that headed sign-in step.
-
-Raw Chromium logs can contain debugging endpoints, authentication service
-URLs, page URLs, and profile paths. Review every log before committing it. The
-checked-in run logs redact the DevTools address and remove verbose
-authentication diagnostics, and the checked-in screenshots redact the local
-account name. The public
-`example.com` smoke test remains in the logs because it is the documented test
-case, not private browsing history.
 
 ## Run headless Edge for Playwright
 
@@ -419,10 +356,6 @@ For a long-running agent, keep the browser lifecycle outside the page task:
 5. Close the connection when the task ends.
 6. Stop the Edge systemd scope when no more tasks need the profile.
 
-This is browser automation with an authenticated session. Treat every page,
-download, form submission, and navigation as an action that needs an explicit
-allowlist.
-
 ## Monitor the board
 
 Start the one-second health logger before a long Edge run:
@@ -441,10 +374,6 @@ The monitor records load, available memory, swap, dirty pages, memory PSI,
 thermal temperature, the number of FEX and Edge processes, and the largest
 processes. It calls `sync` after each line so the tail is more likely to
 survive a hard reset.
-
-The Wayland GPU run stayed around 40-41 C, with memory PSI at zero and more
-than 11 GB available memory during the recorded sample. That is a measurement
-from this board, not a performance guarantee.
 
 ## Troubleshooting
 
@@ -524,13 +453,11 @@ Do not bind CDP to all interfaces as a debugging shortcut.
   JavaScript-heavy pages.
 - The current launch requires `--no-sandbox`, so this is not a hardened
   general-purpose browser deployment.
-- One Edge process produced a FEX SIGSEGV. There is no useful stack trace yet.
+- One Edge process produced a FEX SIGSEGV.
 - Hardware video decode is not working.
 - CJK fonts are missing until `fonts-noto-cjk` is installed in the rootfs.
 - GNOME still emitted nonfatal Wayland assertions about compositor surface
   configuration.
-- The authenticated profile is private local state and is not part of this
-  repository.
 - The Edge, FEX, Ubuntu, kernel, and board versions in this document can drift.
   Recheck them before treating an old result as a regression.
 
@@ -549,11 +476,6 @@ edge-fex/
 └── README.md
 ```
 
-The logs are evidence, not a substitute for reproducing the behavior. The
-checked-in logs redact DevTools addresses and remove verbose authentication
-diagnostics. They do not contain account names, private site names, private
-page URLs, local account names, or browser profile contents.
-
 ## Additional Reading
 
 - [FEX-Emu](https://github.com/FEX-Emu/FEX)
@@ -563,9 +485,6 @@ page URLs, local account names, or browser profile contents.
 - [Playwright connectOverCDP](https://playwright.dev/docs/api/class-browsertype#browser-type-connect-over-cdp)
 - [Arduino VENTUNO Q](https://docs.arduino.cc/hardware/ventuno-q/)
 
-The goal is simple: keep Edge running long enough for the agent to do useful
-work. It does not need to be fast.
-
 ## License
 
-MIT
+[MIT](LICENSE)
